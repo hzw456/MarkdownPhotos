@@ -79,4 +79,5 @@ R为球心到切点的距离，即球半径，而d代表球面上的两个点的
 
 ![enter image description here](https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/86c0460e2f881850a75eac2f5e0b7d08.png)
 
-这种投影，形状变形从中心向外逐渐增大；距中心点 30 度范围内的变形较小。面积变形随距中心距离的增加而增大；以中心点为圆心 30 度半径范围内的变形较小，从中心向外，方向都是准确的。Uber H3的20面体投影即使用了球心投影作为其投影方式。
+这种投影，形状变形从中心向外逐渐增大；距中心点 30 度范围内的变形较小。面积变形随距中心距离的增加而增大；以中心点为圆心 30 度半径范围内的变形较小，从中心向外，方向都是准确的。Uber H3的20面体投影即使用了球心投影作为其投影方式，中心点到最大顶点的角度为37度，变形相对较小。
+![enter image description here](https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/480px-Icosahedron.jpg)
