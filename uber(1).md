@@ -43,7 +43,10 @@ $$z=r \cos\theta$$
 对于地球，地球的形状类似于一个椭球体，因此主要使用的坐标系则是直角坐标系和球坐标系。
 #### （1）地球直角坐标系
 地球直角坐标系的定义是：原点O与地球质心重合，Z轴指向地球北极，X轴指向地球赤道面与格林尼治子午圈的交点，Y轴在赤道平面里与XOZ构成右手坐标系。
-![enter image description here](https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/7a899e510fb30f24acc736fbc295d143ac4b03ed.jpg)
+
+![enter image description here](https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/
+7a899e510fb30f24acc736fbc295d143ac4b03ed.jpg)
+
 #### （2）地球大地坐标系
 除了直角坐标外，由于地球是类球体，因此球坐标也是表达地球位置的直观和简洁的方式。地球大地坐标系就是一种特殊的球坐标系。由于人类生活在地球表面，无需表达地球内部的点，因此仅需要表达地球球面上的点。如下图我们可以想象，若地球是一个标准的球体，地球半径是一个固定值，因此只用方位角和仰角即经度和纬度就可以对地球表面的位置进行表达。
 
