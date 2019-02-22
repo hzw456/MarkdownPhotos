@@ -1,24 +1,27 @@
 # 从全球坐标系统到uber h3
 ## 一、 引言
-地理位置与每个人的生活息息相关。基于位置的服务可以被应用与不同的领域，例如：健康、工作、个人生活等。此服务可以用来辨认一个人或物的位置，例如发现附近的可接单的出租车司机或朋友同事的当前的位置等。
+地理位置与每个人的生活息息相关。基于位置的服务（Location-Based Service，LBS）可以被应用与不同的领域，例如健康、工作、个人生活等。基于位置的服务可以用来辨认一个人或物的位置，比如发现附近的可接单的出租车司机或朋友同事的当前的位置等。
 
 ![直角坐标系和柱面坐标系](https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/270478-3d6b5152f8b2ea08.jpg)
 
-而如果需要确定空间中任意一点的位置，则需要在空间中引入坐标系。通过坐标系的标定即可获得某个点所在的地理位置。对于地球，全球坐标系统（Global Coordinate System）则是表达地球的标准坐标系统。通过空间坐标来我们就可以对地理位置进行唯一的表达，
+如何确定空间中任意一点的位置呢？我们通过在空间中引入坐标系来确定位置。通过坐标系的标定即可获得某个点所在的地理位置。对于地球，全球坐标系统（Global Coordinate System，GCS）则是表达地球的标准坐标系统。通过空间坐标来我们就可以对地理位置进行唯一的表达，最常用的全球坐标就是wgs84坐标系（World Geodetic System 1984），即经纬度坐标系。通过经纬度我们就可以确定在地球上唯一的一个点,从而确定你所在的位置。
 
 ## 二、全球坐标系统
-在讲全球坐标系统之前，先补充一下空间坐标系的相关知识，以此来对全球坐标系统有更好的认识和更深入的了解。
+首先讲一下空间坐标系的相关知识，通过空间坐标系来对全球坐标系统有更好的认识和更深入的了解。
 ### 1 空间坐标系
 最常用的空间坐标系有三种：
 * 空间直角坐标系：
-  也称笛卡尔坐标系，过定点O，作三条互相垂直的数轴，它们都以O为原点且一般具有相同的长度单位.这三条轴分别叫做x轴(横轴）、y轴(纵轴)、z轴(竖轴)；统称坐标轴.通常把x轴和y轴配置在水平面上，而z轴则是铅垂线；它们的正方向要符合右手规则，这样就构成了一个笛卡尔坐标。
+  
+    也称笛卡尔坐标系，过定点O，作三条互相垂直的数轴，它们都以O为原点且一般具有相同的长度单位.这三条轴分别叫做x轴(横轴）、y轴(纵轴)、z轴(竖轴)；统称坐标轴.通常把x轴和y轴配置在水平面上，而z轴则是铅垂线；它们的正方向要符合右手规则，这样就构成了一个笛卡尔坐标。
 
 ![直角坐标系和柱面坐标系](https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/a8ec8a13632762d0d57d6e89abec08fa513dc641.jpg)
 * 柱面坐标系:
+  
   设M(x,y,z)为空间内一点，并设点M在xoy面上的投影P的极坐标为r,θ，则这样的三个数r, θ,z就叫点M的柱面坐标。
 
 ![直角坐标系和柱面坐标系](https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/342ac65c1038534304e1d15d9313b07eca8088a4.jpg)
 * 球坐标系：
+  
   是一种利用球坐标(r,θ,φ)表示一个点 p 在三维空间的位置的三维正交坐标系，球坐标系(r,θ,φ)定义了球体，它以坐标原点为参考点，由方位角、仰角和距离构成。如下图所示，即是一个球坐标系，r为距离，θ为仰角，φ为方位角。
 
 ![球坐标系](https://raw.githubusercontent.com/sadnessly/MarkdownPhotos/master/pic/86c0460e2f881850a75eac2f5e0b7d07.png)
@@ -45,8 +48,7 @@ $$z=r \cos\theta$$
 #### （1）地球直角坐标系
 地球直角坐标系的定义是：原点O与地球质心重合，Z轴指向地球北极，X轴指向地球赤道面与格林尼治子午圈的交点，Y轴在赤道平面里与XOZ构成右手坐标系。
 
-![enter image description here](https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/
-7a899e510fb30f24acc736fbc295d143ac4b03ed.jpg)
+![enter image description here](https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/7a899e510fb30f24acc736fbc295d143ac4b03ed.jpg)
 
 #### （2）地球大地坐标系
 除了直角坐标外，由于地球是类球体，因此球坐标也是表达地球位置的直观和简洁的方式。地球大地坐标系就是一种特殊的球坐标系。由于人类生活在地球表面，无需表达地球内部的点，因此仅需要表达地球球面上的点。如下图我们可以想象，若地球是一个标准的球体，地球半径是一个固定值，因此只用方位角和仰角即经度和纬度就可以对地球表面的位置进行表达。
@@ -72,9 +74,13 @@ $$z=r \cos\theta$$
 * 将球面坐标转换为平面坐标的过程（投影算法）。
 
 对于球体来说，不能直接将球面完整和准确的展开在平面上，因此若要将地球展现在二维平面上，就需要某些损失精确度的方式来表达。因此需要用投影的方式对地球进行展示。投影顾名思义，是用光线照射物体，在某个面上得到的影子，即把地球表面的任意点，利用一定数学法则，转换到地图平面上的理论和方法。书面概念化定义：地图投影就是指建立地球表面上的点与投影平面上点之间的一一对应关系的方法。即建立之间的数学转换公式。它将作为一个不可展平的曲面即地球表面投影到一个平面的基本方法，保证了空间信息在区域上的联系与完整。
+
 ![enter image description here](https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/86c0460e2f881850a75eac2f5e0b7d04.png)
+
 然而对球表面进行投影就会带来一定的精度损失，如下图所示，这个投影过程将产生投影变形，而且不同的投影方法具有不同性质和大小的投影变形。根据投影变形的性质主要将变形分为面积、角度、长度。根据不同地图的绘制需求，选择相对合适的投影，保证地图的主要使用用途不因为变形而造成不可用。
+
 ![enter image description here](https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/86c0460e2f881850a75eac2f5e0b7d05.png)
+
 ### 1投影分类
 根据投影面形状、位置等对地图投影进行分类：
 * 投影面和地轴的关系：
@@ -86,25 +92,29 @@ $$z=r \cos\theta$$
 2 圆柱投影 （投影中纬线为一组平行直线，经线为垂直于纬线的另一组平行直线，且两相邻经线之间的距离相等）
 3 方位投影 （投影中纬线为同心圆，经线为圆的半径，且经线间的夹角等于地球面上相应的经差）
 此外，还有伪圆锥投影，伪圆柱投影，伪方位投影，多圆锥投影等
+
 ![enter image description here](https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/86c0460e2f881850a75eac2f5e0b7d06.png)
 
-* 投影面和地球面的关系：
+<!-- * 投影面和地球面的关系：
 1 切投影 (投影面和地球球面相切)
 2 割投影 (投影面和地球球面相割)
-![enter image description here](https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/WX20190220-164851@2x.png)
+![enter image description here](https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/WX20190220-164851@2x.png) -->
 
 如何将三维球体在变形较小的情况下表现在二维平面上就是相对困难的问题。常用的转换方式，比如将球体投影在圆柱、圆锥或是平面上，且根据所需不同的位置经度要求，可以选择变形相对较小的方式进行投影。如下图中的正轴圆柱投影（即墨卡托投影）在赤道附近的变形最小，即可以用此种投影表示赤道赤道附近的地区，这样的变形最小。而用这种投影方式表示地球两极不合适，会有很大的变形。
+
 ![enter image description here](https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/WX20190220-164536@2x.png)
 
 用我们平时用到的电子地图举例（图自https://thetruesize.com）
 ![enter image description here](https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/6309329-dc454555912d15c8.png)
+
 如果将中国移动到俄罗斯的位置,中国的面积会变得比原先大很多
+
 ![enter image description here](https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/6309329-bfe9191ded07ff65.png)
 
 ###2 球心投影
 球心投影是方位投影之一。以球心O为投射中心，把球面上的P点投射到它的切平面上的投影法。它是最有用的投影方法之一，17世纪中叶开始使用。它能把球面上的大圆，投射成直线。常用于导航、测绘航线、寻找星座与星体。还可用来制作日晷，因此亦称日晷投影。而平面与球体有且仅有一个切点，将地球表面上的点投影在平面上。如下图，若计算球心点到地图的距离，则有计算公式：
 $${\displaystyle r(d)=R\,\tan {\frac {d}{R}}}$$
-
+球心投影目的
 R为球心到切点的距离，即球半径，而d代表球面上的两个点的球面距离，r为这两个点投影在平面的真实距离。
 
 ![enter image description here](https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/86c0460e2f881850a75eac2f5e0b7d08.png)
