@@ -1,18 +1,31 @@
-# 从全球坐标系统到uber h3
-
-在电影流浪地球中，
+# 全球坐标系统
+## 一、引子
+在电影流浪地球中，我们常常能看到这样的场景，地球在逐渐靠近木星。
 
 <img src="https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/WX20190223-215940@2x.png" width="300" hegiht="200" align=center />
 
+以及大刘在玻璃上描绘出的地球和木星的轮廓，我们都能了解到一个常识，即地球是圆的，或者至少是圆滚滚的类似球体的行星。
 
+<img src="https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/WX20190223-221827@2x.png" width="300" hegiht="200" align=center />
+
+可当我们再看到屏幕上全球救援队消息的时候，却发现世界地图是这样的，一个长方形的世界。
+
+<img src="https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/v2-504f5b96874a21ce296295feed51ac8e_hd.jpg" width="300" hegiht="200" align=center />
+
+这和我们长看到的
+
+为什么一个类似球体的地球在表示在地图上会是一个长方形呢？
+
+
+
+## 二、全球坐标系统
+<img src="https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/v2-48aec397b3ab14d4fe1c136677783d18_hd.jpg" width="300" hegiht="200" align=center />
 
 地理位置与每个人的生活息息相关。基于位置的服务（Location-Based Service，LBS）可以被应用与不同的领域，例如健康、工作、个人生活等。基于位置的服务可以用来辨认一个人或物的位置，比如发现附近的可接单的出租车司机或朋友同事的当前的位置等。
 
 ![直角坐标系和柱面坐标系](https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/270478-3d6b5152f8b2ea08.jpg)
 
 如何确定空间中任意一点的位置呢？我们通过在空间中引入坐标系来确定位置。通过坐标系的标定即可获得某个点所在的地理位置。对于地球，全球坐标系统（Global Coordinate System，GCS）则是表达地球的标准坐标系统。通过空间坐标来我们就可以对地理位置进行唯一的表达，最常用的全球坐标就是wgs84坐标系（World Geodetic System 1984），即经纬度坐标系。通过经纬度我们就可以确定在地球上唯一的一个点,从而确定你所在的位置。
-
-## 二、全球坐标系统
 首先讲一下空间坐标系的相关知识，通过空间坐标系来对全球坐标系统有更好的认识和更深入的了解。
 ### 1 空间坐标系
 最常用的空间坐标系有三种：
