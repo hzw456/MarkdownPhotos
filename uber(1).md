@@ -2,8 +2,7 @@
 
 在电影流浪地球中，
 
-
-<img src="https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/v2-be7c25914ff7ad6a2f9f9d8b839ffd44_r.jpg" width="300" hegiht="200" align=center />
+<img src="https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/WX20190223-215940@2x.png" width="300" hegiht="200" align=center />
 
 
 
