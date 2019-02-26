@@ -2,15 +2,18 @@
 
 ### 1 柏拉图立体
 
-在流浪地球中，有这样一个场景，程序员李一一手里握着一个骰子，好像和一般的不太一样，这就是正二十面体的骰子。为什么正二十面体可以作为骰子出现呢？这就引出了柏拉图体即正多面体的概念。
+在流浪地球中，有这样一个场景，程序员李一一手里握着一个正二十面体的骰子。为什么正二十面体可以作为骰子出现呢？这就引出了柏拉图体即正多面体的概念。
 
 <img src="https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/v2-dfab80d283bac1358be070eb2ef3bbc2_hd (1).jpg" width="500" hegiht="300" align=center />
 
 如果一个多面体的所有面都是全等正多边形，所有多面角也全等，我们就说它是正多面体或柏拉图体。有无限多种正多边形，而正多面体只有五种。正多面体根据面的数目来命名，也就是：4个正三角形的正4面体；6个正方形的正6面体（立方体）；8个正三角形的正8面体；12个正五边形的正12面体；20个正三角形的正20面体。由于柏拉图体的每个面的出现概率出现相同，因此常作为骰子出现。
 
-<img src="https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/4d086e061d950a7b6b47c3ca0ad162d9f2d3c94a.jpg" width="500" hegiht="300" align=center />
+<img src="https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/4d086e061d950a7b6b47c3ca0ad162d9f2d3c94a.jpg" width="200" hegiht="300" align=center />
 
+柏拉图立体还有一个重要的特性即正多面体的中心到每个体的顶点和面的距离相同。根据这个特性可以对柏拉图体做内切球或是外切球。据此，我们将地球近似为一个球体，就可以使用柏拉图体进行内切或是外切，进而进行投影。
+如图，google S2即采用了六面体作为投影方式：
 
+<img src="https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/6879b5d273829197535c347f2adddb74_hd.png" width="400" hegiht="300" align=center />
 
 ###2 球心投影
 球心投影是方位投影之一。以球心O为投射中心，把球面上的P点投射到它的切平面上的投影法。它是最有用的投影方法之一，17世纪中叶开始使用。它能把球面上的大圆，投射成直线。常用于导航、测绘航线、寻找星座与星体。还可用来制作日晷，因此亦称日晷投影。而平面与球体有且仅有一个切点，将地球表面上的点投影在平面上。如下图，若计算球心点到地图的距离，则有计算公式：
