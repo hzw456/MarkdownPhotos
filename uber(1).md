@@ -4,7 +4,7 @@
 
 <img src="https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/WX20190223-215940@2x.png" width="300" hegiht="200" align=center />
 
-以及大刘在玻璃上描绘出的地球和木星的轮廓，我们都能了解到一个常识，即地球是圆的，或者至少是圆滚滚的类似球体的行星。
+以及在玻璃上描绘出的地球和木星的轮廓，我们都能了解到一个常识，即地球是圆的，或者至少是类似球体的行星。
 
 <img src="https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/WX20190223-221827@2x.png" width="300" hegiht="200" align=center />
 
@@ -12,21 +12,28 @@
 
 <img src="https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/v2-504f5b96874a21ce296295feed51ac8e_hd.jpg" width="300" hegiht="200" align=center />
 
-这和我们长看到的
+这好像和我们的认知也是一样的，因为我们常看到的世界地图诸如这样
+<img src="https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/world5.jpg" width="300" hegiht="200" align=center />
 
-为什么一个类似球体的地球在表示在地图上会是一个长方形呢？
+亦或是这样，都类似长方形的地图的。
 
+<img src="https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/世界地图颜色-亚洲在中心-108063303.jpg" width="300" hegiht="200" align=center />
+
+我们还会看到下面这样的世界地图，会发现中国的形状与之前地图中的都不一样,这是为什么呢？
+
+<img src="https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/40064157-color-blank-world-map.jpg" width="300" hegiht="200" align=center />
 
 
 ## 二、全球坐标系统
+
+在讲这个问题之前，先来聊一下全球坐标系统。
+
 <img src="https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/v2-48aec397b3ab14d4fe1c136677783d18_hd.jpg" width="300" hegiht="200" align=center />
 
-地理位置与每个人的生活息息相关。基于位置的服务（Location-Based Service，LBS）可以被应用与不同的领域，例如健康、工作、个人生活等。基于位置的服务可以用来辨认一个人或物的位置，比如发现附近的可接单的出租车司机或朋友同事的当前的位置等。
+地理位置的重要性无需多言，与每个人的生活息息相关。如何确定空间中任意一点的位置呢？我们通过在空间中引入坐标系来确定位置。通过坐标系的标定即可获得某个点所在的地理位置。对于地球，全球坐标系统（Global Coordinate System，GCS）则是表达地球的标准坐标系统。
 
 ![直角坐标系和柱面坐标系](https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/270478-3d6b5152f8b2ea08.jpg)
 
-如何确定空间中任意一点的位置呢？我们通过在空间中引入坐标系来确定位置。通过坐标系的标定即可获得某个点所在的地理位置。对于地球，全球坐标系统（Global Coordinate System，GCS）则是表达地球的标准坐标系统。通过空间坐标来我们就可以对地理位置进行唯一的表达，最常用的全球坐标就是wgs84坐标系（World Geodetic System 1984），即经纬度坐标系。通过经纬度我们就可以确定在地球上唯一的一个点,从而确定你所在的位置。
-首先讲一下空间坐标系的相关知识，通过空间坐标系来对全球坐标系统有更好的认识和更深入的了解。
 ### 1 空间坐标系
 最常用的空间坐标系有三种：
 * 空间直角坐标系：
@@ -63,18 +70,18 @@ $$y=r \sin\theta \sin\phi$$
 $$z=r \cos\theta$$
 
 ### 2 地球坐标系
-对于地球，地球的形状类似于一个椭球体，因此主要使用的坐标系则是直角坐标系和球坐标系。
+对于地球，地球的形状类似于一个椭球体，因此主要使用的坐标系是直角坐标系和球坐标系。
 #### （1）地球直角坐标系
 地球直角坐标系的定义是：原点O与地球质心重合，Z轴指向地球北极，X轴指向地球赤道面与格林尼治子午圈的交点，Y轴在赤道平面里与XOZ构成右手坐标系。
 
 ![enter image description here](https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/7a899e510fb30f24acc736fbc295d143ac4b03ed.jpg)
 
 #### （2）地球大地坐标系
-除了直角坐标外，由于地球是类球体，因此球坐标也是表达地球位置的直观和简洁的方式。地球大地坐标系就是一种特殊的球坐标系。由于人类生活在地球表面，无需表达地球内部的点，因此仅需要表达地球球面上的点。如下图我们可以想象，若地球是一个标准的球体，地球半径是一个固定值，因此只用方位角和仰角即经度和纬度就可以对地球表面的位置进行表达。
+除了直角坐标外，由于地球是类球体，因此球坐标也是表达地球位置更直观和简洁的方式。地球大地坐标系就是一种特殊的球坐标系。方位角和仰角类比于地球的经度和纬度。
 
 ![enter image description here](https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/86c0460e2f881850a75eac2f5e0b7d02.png)
 
-但是实际上地球的形状并非一个标准的球体，其实际形状类似于这样：
+实际上地球的形状并非一个标准的球体，其形状类似于这样：
 
 ![enter image description here](https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/v2-ac5458d366778d818ab572b30c7ca0dd_hd.jpg)
 
@@ -83,31 +90,28 @@ $$z=r \cos\theta$$
 ![enter image description here](https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/WX20190220-155357@2x.png)
 
 大地纬度、大地经度和大地高分别用大写英文字母B、L、H表示。沿法线至椭球面的距离为该点的大地高。
-目前常用的也是全球定位系统使用的大地坐标系是WGS 84参考系。WGS84包含一套地球的标准经纬坐标系、一个用于计算原始海拔数据的参考椭球体，和一套用以定义海平面高度的引力等势面数据。
-
+通过空间坐标来我们就可以对地理位置进行唯一的表达，最常用的全球坐标就是wgs84坐标系（World Geodetic System 1984），WGS84包含一套地球的标准经纬坐标系、一个用于计算原始海拔数据的参考椭球体，和一套用以定义海平面高度的引力等势面数据。
 
 ## 三、地图投影
-当我们需要在纸面或者屏幕上显示地球时，就需要将三维的球体转换为二维的平面，即将地球球面坐标转化为平面坐标。简单的说投影坐标系是地理坐标系+投影过程。
-投影所需要的必要条件是：
-* 任何一种投影都必须基于一个椭球（地球椭球体）
-* 将球面坐标转换为平面坐标的过程（投影算法）。
-
 对于球体来说，由于表面是一个曲面，因此无法完全将球面完整和准确的展开在平面上，因此若要将地球展现在二维平面上，就需要某些损失精确度的方式来表达。如同桔子皮一般，无法展开成平面。
 
 <img src="https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/WX20190222-154741%402x.png" width="300" hegiht="200" align=center />
 
-因此需要用投影的方式对地球进行展示。投影顾名思义，是用光线照射物体，在某个面上得到的影子，即把地球表面的任意点，利用一定数学法则，转换到地图平面上的理论和方法。书面概念化定义：地图投影就是指建立地球表面上的点与投影平面上点之间的一一对应关系的方法。即建立之间的数学转换公式。它将作为一个不可展平的曲面即地球表面投影到一个平面的基本方法，保证了空间信息在区域上的联系与完整。如下图是不同投影方式对球体就行投影展开的不同方式。
+因此当我们需要在纸面或者屏幕上显示地球时，就需要将地球球面坐标（三维）转化为平面坐标（二维）。简单的说投影坐标系是地理坐标系+投影过程。
+投影所需要的必要条件是：
+* 任何一种投影都必须基于一个椭球（地球椭球体）
+* 将球面坐标转换为平面坐标的过程（投影算法）。
+
+因此需要用投影的方式对地球进行展示。投影顾名思义，是用光线照射物体，在某个面上得到的影子，即把地球表面的任意点，利用一定数学法则，转换到地图平面上的理论和方法，保证了空间信息在区域上的联系与完整。如下图是不同投影方式对球体投影展开的不同方式。
 
 ![enter image description here](https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/WX20190222-160212@2x.png)
 
-然而对球表面进行投影就会带来一定的精度损失，如下图所示，由于平面不能很好的贴合地球曲面，因此这个投影过程将产生投影变形，而且不同的投影方法具有不同性质和大小的投影变形。根据投影变形的性质主要将变形分为面积、角度、长度。根据不同地图的绘制需求，选择相对合适的投影，保证地图的主要使用用途不因为变形而造成不可用。
+然而对球表面进行投影就会带来一定的精度损失，如下图所示，由于平面不能很好的贴合地球曲面，因此这个投影过程将产生投影变形。
 
 <img src="https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/86c0460e2f881850a75eac2f5e0b7d05.png" width="400" hegiht="200" align=center />
 
-<img src="https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/WX20190222-160908@2x.png" width="300" hegiht="200" align=center />
-
 ### 1投影分类
-根据投影面形状、位置等对地图投影进行分类：
+而且不同的投影方法具有不同性质和大小的投影变形。根据投影变形的性质主要将变形分为面积、角度、长度。根据不同地图的绘制需求，选择不同的投影类型，保证地图的主要使用用途不因为变形而造成不可用。根据投影面形状、位置等对地图投影进行分类：
 * 投影面和地轴的关系：
 
         1 正轴投影（投影面的中心线与地轴平行）
@@ -139,33 +143,3 @@ $$z=r \cos\theta$$
 同时，由于中国离赤道相对于俄罗斯较近，因此变形程度较小。如果将中国移动到俄罗斯的位置,变形大,中国的面积就会变得比原先大很多。
 
 ![enter image description here](https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/6309329-bfe9191ded07ff65.png)
-
-###2 球心投影
-球心投影是方位投影之一。以球心O为投射中心，把球面上的P点投射到它的切平面上的投影法。它是最有用的投影方法之一，17世纪中叶开始使用。它能把球面上的大圆，投射成直线。常用于导航、测绘航线、寻找星座与星体。还可用来制作日晷，因此亦称日晷投影。而平面与球体有且仅有一个切点，将地球表面上的点投影在平面上。如下图，若计算球心点到地图的距离，则有计算公式：
-$${\displaystyle r(d)=R\,\tan {\frac {d}{R}}}$$
-球心投影目的
-R为球心到切点的距离，即球半径，而d代表球面上的两个点的球面距离，r为这两个点投影在平面的真实距离。
-
-![enter image description here](https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/86c0460e2f881850a75eac2f5e0b7d08.png)
-
-我们可以将这个三维投影图转换为二维，以解释这个公式，如图C为球心，D为平面与球体的切点，Θ为弧度角。根据弧度角公式可得
-
-$${\displaystyle Θ={\frac {弧DB}{R}}={\frac {d}{R}}}$$
-
-则DF的长度为
-
-
-$${\displaystyle DF=DB\,\tan Θ = R\,\tan Θ }$$
-
-<img src="https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/WX20190222-162911@2x.png" width="300" hegiht="200" align=center />
-
-
-这种投影，形状变形从中心向外逐渐增大；距中心点 30 度范围内的变形较小。面积变形随距中心距离的增加而增大；以中心点为圆心 30 度半径范围内的变形较小，从中心向外，方向都是准确的。
-
-## 下期预告
-了解了以上知识后，下一篇就将介绍UBER H3，Uber H3的投影即使用了球心投影作为其投影方式，但是其精妙的投影方式使得在兼顾投影变形小的同时，也能很方便的进行投影计算，在打车等的很多领域中使用。使用H3的六边形格子系统很方便的进行供需情况的管理，使用动态调价、司机引导等多种手段对市场进行优化。
-
-<img src="https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/image12.png" width="300" hegiht="200" align=center />
-
-
-<!-- 中心点到最大顶点的角度为37度左右，变形相对较小。 -->
