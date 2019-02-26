@@ -13,6 +13,7 @@
 <img src="https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/v2-504f5b96874a21ce296295feed51ac8e_hd.jpg" width="300" hegiht="200" align=center />
 
 这好像和我们的认知也是一样的，因为我们常看到的世界地图诸如这样
+
 <img src="https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/world5.jpg" width="300" hegiht="200" align=center />
 
 亦或是这样，都类似长方形的地图的。
@@ -111,7 +112,7 @@ $$z=r \cos\theta$$
 <img src="https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/86c0460e2f881850a75eac2f5e0b7d05.png" width="400" hegiht="200" align=center />
 
 ### 1投影分类
-而且不同的投影方法具有不同性质和大小的投影变形。根据投影变形的性质主要将变形分为面积、角度、长度。根据不同地图的绘制需求，选择不同的投影类型，保证地图的主要使用用途不因为变形而造成不可用。根据投影面形状、位置等对地图投影进行分类：
+如何将三维球体在变形较小的情况下表现在二维平面上呢？不同的投影方法具有不同性质和大小的投影变形。常用的转换方式，比如将球体投影在圆柱、圆锥或是平面上，且根据所需投影的位置不同，选择变形相对较小的方式进行投影。根据投影变形的性质主要将变形分为面积、角度、长度。根据不同地图的绘制需求，选择不同的投影类型，保证地图的主要使用用途不因为变形而造成不可用。根据投影面形状、位置等对地图投影进行分类：
 * 投影面和地轴的关系：
 
         1 正轴投影（投影面的中心线与地轴平行）
@@ -132,14 +133,22 @@ $$z=r \cos\theta$$
 2 割投影 (投影面和地球球面相割)
 ![enter image description here](https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/WX20190220-164851@2x.png) -->
 
-如何将三维球体在变形较小的情况下表现在二维平面上呢？常用的转换方式，比如将球体投影在圆柱、圆锥或是平面上，且根据所需不同的位置经度要求，可以选择变形相对较小的方式进行投影。如下图中的正轴圆柱投影（即墨卡托投影）在赤道附近的变形最小，即可以用此种投影表示赤道赤道附近的地区，这样的变形最小。但用这种投影方式表示地球两极不合适，会有很大的变形。
+我们常看到的世界地图即是正轴圆柱投影（即墨卡托投影），在赤道附近的变形最小，地球两极变形最大。这实际上就解释了世界地图为什么一般都是类似长方形的，当地球投影在圆柱面上时，对表面进行展开，即是一个长方形的地图。
 
 ![enter image description here](https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/WX20190220-164536@2x.png)
 
-用我们平时用到的电子地图举例（图自https://thetruesize.com）可以看到北极和南极地区的变形程度非常大。
+如下图的世界地图（图自https://thetruesize.com）可以看到北极和南极地区的变形程度非常大。
 
 ![enter image description here](https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/6309329-dc454555912d15c8.png)
 
-同时，由于中国离赤道相对于俄罗斯较近，因此变形程度较小。如果将中国移动到俄罗斯的位置,变形大,中国的面积就会变得比原先大很多。
+同时，由于中国离赤道相对于俄罗斯较近，因此变形程度较小。如果将中国移动到俄罗斯的位置,中国的面积就会变得比原先大很多。
 
 ![enter image description here](https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/6309329-bfe9191ded07ff65.png)
+
+这就可以解释上述的另一个问题，为什么世界地图有些看起来是不一样的。选择的投影方式的不同，就会造成地图的变形程度不同。
+
+## 下期预告
+了解了以上知识后，下一篇将介绍UBER H3，其精妙的投影方式使得在兼顾投影变形小的同时，也能很方便的进行投影计算，在打车等的很多领域中使用。使用H3的六边形格子系统很方便的进行供需情况的管理，使用动态调价、司机引导等多种手段对市场进行优化。
+
+<img src="https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/image12.png" width="300" hegiht="200" align=center />
+
