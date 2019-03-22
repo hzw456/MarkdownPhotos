@@ -98,10 +98,17 @@ $$y = r * sin（θ）$$
 <img src="https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/20190321202642.jpg" width="400" hegiht="300" align=center />
 
 
-由于笛卡尔坐标不能准确的表示格子的位置，因此还需要将平面笛卡尔坐标转换为ijk坐标，以计算点投影在哪个格子中。
+由于笛卡尔坐标不能准确的表示格子的位置，因此还需要将平面笛卡尔坐标转换为ijk坐标
+
+<img src="https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/WX20190322-143655@2x.png" width="400" hegiht="300" align=center />
+
+再通过ijk坐标计算点落在在哪个格子中。
 
 <img src="https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/cpidigits.png" width="400" hegiht="300" align=center />
 
-三角形平面可以划分为若干个六边形格子，大的六边形格子可以划分为更小的六边形，因此不同层级的六边形的六边形边长依次递减，且边长递减倍数为根号7。
+对于六边形坐标，需要将笛卡尔坐标系转换为ijk坐标系，即可以计算出该点落在哪个六边形格子内。计算出在哪个格子中再根据编码规则，即可计算出任意点所在六边形格子的编码。
 
-对于六边形坐标，需要将笛卡尔坐标系转换为ijk坐标系，即可以计算出该点落在哪个六边形格子内。
+编码信息如下：
+* 4 bits to indicate the cell resolution 0-15,
+7 bits to indicate the base cell 0-121, and
+3 bits to indicate each subsequent digit 0-6 from resolution 1 up to the resolution of the cell
