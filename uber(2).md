@@ -106,9 +106,11 @@ $$y = r * sin（θ）$$
 
 <img src="https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/cpidigits.png" width="400" hegiht="300" align=center />
 
-对于六边形坐标，需要将笛卡尔坐标系转换为ijk坐标系，即可以计算出该点落在哪个六边形格子内。计算出在哪个格子中再根据编码规则，即可计算出任意点所在六边形格子的编码。
+对于六边形坐标，需要将笛卡尔坐标系转换为ijk坐标系，再根据所要计算的级别，即可以计算出该点落在哪个六边形格子内。计算出在哪个格子中再根据编码规则，即可计算出任意点所在六边形格子的编码。
 
 编码信息如下：
-* 4 bits to indicate the cell resolution 0-15,
-7 bits to indicate the base cell 0-121, and
-3 bits to indicate each subsequent digit 0-6 from resolution 1 up to the resolution of the cell
+* 用4位编码表示格子的级别
+* 用7位编码表示0级的格子（最大的六边形格子，共有122个）
+* 用三位编码表示从0级到该级别的位置关系
+  
+<img src="https://github.com/sadnessly/MarkdownPhotos/raw/master/pic/WX20190322-1426012x.png" width="400" hegiht="300" align=center />
